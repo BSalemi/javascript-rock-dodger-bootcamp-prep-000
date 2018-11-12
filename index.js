@@ -1,16 +1,16 @@
 /**
  * Don't change these constants!
  */
-const DODGER = document.getElementById('dodger')
-const GAME = document.getElementById('game')
-const GAME_HEIGHT = 400
-const GAME_WIDTH = 400
-const LEFT_ARROW = 37 // use e.which!
-const RIGHT_ARROW = 39 // use e.which!
-const ROCKS = []
-const START = document.getElementById('start')
+const DODGER = document.getElementById('dodger');
+const GAME = document.getElementById('game');
+const GAME_HEIGHT = 400;
+const GAME_WIDTH = 400;
+const LEFT_ARROW = 37 ;
+const RIGHT_ARROW = 39 ;
+const ROCKS = [];
+const START = document.getElementById('start');
 
-var gameInterval = null
+var gameInterval = null;
 
 /**
  * Be aware of what's above this line,
@@ -134,12 +134,23 @@ function moveDodger(e) {
     }
   }
   );
-  
- 
-  
 
 
 function moveDodgerRight() {
+  window.requestAnimationFrame(function() {
+    var rightNumbers = DODGER.style.left.replace('px','');
+    var right = parseInt(rightNumbers, 10) - 40;
+    if(right < 400) {
+      DODGER.style.right = `${right+4}px`}
+    })}
+  
+ $(document).on('keydown',function(e) {
+    if(e.which === RIGHT_ARROW) {
+      moveDodgerRight();
+    }
+  }
+  );
+  
   // implement me!
   /**
    * This function should move DODGER to the right
