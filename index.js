@@ -125,7 +125,7 @@ function moveDodger(e) {
   var leftNumbers = DODGER.style.left.replace('px','');
   var left = parseInt(leftNumbers, 10);
   if(left > 0) {
-    DODGER.style.left = `${left-4}px`;
+    DODGER.style.left = `${left-4}px`}
   })}
   
   $(document).on('keydown',function(e) {
@@ -149,7 +149,7 @@ function moveDodgerRight() {
       moveDodgerRight();
     }
   }
-  );
+  )
   
   // implement me!
   /**
